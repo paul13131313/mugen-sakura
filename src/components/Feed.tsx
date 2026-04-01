@@ -49,8 +49,19 @@ export default function Feed() {
   }, [page, loading, fetchItems]);
 
   return (
-    <div ref={containerRef} className="snap-container">
-      {showSplash && <Splash onDismiss={() => setShowSplash(false)} />}
+    <>
+      {/* 固定タイトル（最前面） */}
+      {!showSplash && (
+        <div
+          className="fixed top-4 left-0 right-0 z-50 text-center text-white/80 text-xs tracking-[0.3em] pointer-events-none"
+          style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
+        >
+          無限桜
+        </div>
+      )}
+
+      <div ref={containerRef} className="snap-container">
+        {showSplash && <Splash onDismiss={() => setShowSplash(false)} />}
 
       {items.map((item, i) => (
         <MediaItem key={`${item.src}-${i}`} item={item} />
@@ -64,6 +75,7 @@ export default function Feed() {
           <div className="text-white/30 text-sm tracking-wider">...</div>
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 }
