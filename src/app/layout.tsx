@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://mugen-sakura.vercel.app"),
   title: "無限桜 — 桜が止まらない",
   description: "桜の写真と動画が無限に流れ続ける",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/manifest.json",
   openGraph: {
     title: "無限桜 — 桜が止まらない",
     description: "桜の写真と動画が無限に流れ続ける",
