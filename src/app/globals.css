@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  background: #000;
+}
+
+/* スナップスクロールコンテナ */
+.snap-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100dvh;
+  -webkit-overflow-scrolling: touch;
+}
+
+.snap-container::-webkit-scrollbar {
+  display: none;
+}
+
+.snap-item {
+  scroll-snap-align: start;
+  height: 100dvh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+
+/* スプラッシュ画面 */
+.splash {
+  background: linear-gradient(180deg, #FFF0F5 0%, #FFE4E1 50%, #FFF0F5 100%);
+}
+
+/* 縦書き */
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* フェードイン */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* 上向き矢印アニメーション */
+@keyframes bounceUp {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(-8px); opacity: 1; }
+}
+
+.bounce-up {
+  animation: bounceUp 1.5s ease-in-out infinite;
+}
+
+/* フェードアウト */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; pointer-events: none; }
+}
+
+.fade-out {
+  animation: fadeOut 0.8s ease-in-out forwards;
+}
