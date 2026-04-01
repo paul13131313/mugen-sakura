@@ -76,8 +76,12 @@ export default function MediaItem({ item }: MediaItemProps) {
         </a>
       </div>
 
-      {/* ロゴ（左下） */}
-      <div className="absolute bottom-4 left-4 text-white/30 text-sm tracking-wider">
+      {/* タイトル（上部） */}
+      <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-black/20 to-transparent" />
+      <div
+        className="absolute top-4 left-0 right-0 text-center text-white/70 text-xs tracking-[0.3em]"
+        style={{ textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}
+      >
         無限桜
       </div>
     </div>
